@@ -10,6 +10,12 @@ variable "resource_group_name" {
   description = "Resource group name in your Azure subscription."
 }
 
+variable "name_existing_service_plan" {
+  type        = string
+  default     = ""
+  description =  "Service Plan already created."
+}
+
 variable "subscription_id" {
   type        = string
   default     = ""
@@ -46,28 +52,10 @@ variable "random_integer_max" {
   description = "Maximum value for random integer."
 }
 
-variable "name_asp" {
-  type        = string
-  default     = "webapp-asp"
-  description = "Name of the appservice plan."
-}
-
-variable "name_webapp" {
-  type        = string
-  default     = "webapp"
-  description = "Name of the webapp."
-}
-
 variable "os_type" {
   type        = string
   default     = "Linux"
   description = "OS type for the VM."
-}
-
-variable "sku_name" {
-  type        = string
-  default     = "B1"
-  description = "SKU name for the VM."
 }
 
 variable "https_only" {
@@ -84,7 +72,7 @@ variable "minimum_tls_version" {
 
 variable "repo_url" {
   type        = string
-  default     = "https://github.com/terraform-azurerm-examples/webapp-asp.git"
+  default     = "https://github.com/Azure-Samples/nodejs-docs-hello-world"
   description = "URL of the repo."
 }
 
